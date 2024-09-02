@@ -26,13 +26,21 @@ $id = $parts[2] ?? null;
 $database = new Database("localhost", "product_db", "root", "");
 
 // PRODUCTS
-$gateway = new ProductGateway($database);
-$controller = new ProductController($gateway);
+// $gateway = new ProductGateway($database);
+// $controller = new ProductController($gateway);
 
 // CATEGORIES
 // $gateway = new CategoryGateway($database);
 
 // $controller = new CategoryController($gateway);
+
+// TESTIMONIALS
+$gateway = new TestimonialGateway($database);
+$controller = new TestimonialController($gateway);
+
+// PROJECTS
+$gateway = new ProjectGateway($database);
+$controller = new ProjectController($gateway);
 
 $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
 
