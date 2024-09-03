@@ -35,12 +35,18 @@ $database = new Database("localhost", "product_db", "root", "");
 // $controller = new CategoryController($gateway);
 
 // TESTIMONIALS
-$gateway = new TestimonialGateway($database);
-$controller = new TestimonialController($gateway);
+// $gateway = new TestimonialGateway($database);
+// $controller = new TestimonialController($gateway);
 
 // PROJECTS
-$gateway = new ProjectGateway($database);
-$controller = new ProjectController($gateway);
+// $gateway = new ProjectGateway($database);
+// $controller = new ProjectController($gateway);
+
+// USERS
+$gateway = new UserGateway($database);
+$controller = new UserController($gateway);
+
+
 
 $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
 
